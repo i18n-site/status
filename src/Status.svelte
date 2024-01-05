@@ -12,7 +12,7 @@
 + li
 
 onMount =>
-  console.log 123, Li
+  console.log await Li()
   return
 </script>
 

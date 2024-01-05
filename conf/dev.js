@@ -1,1 +1,1 @@
-export const API = "https://status-api.i18n.site/";
+export const API = "//0.0.0.0:5123/";
