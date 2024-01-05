@@ -30,8 +30,8 @@ dependencies:
     specifier: ^0.0.1
     version: 0.0.1
   '@5-/alive':
-    specifier: ^0.1.4
-    version: 0.1.4(@3-/proto@2.0.36)
+    specifier: ^0.1.5
+    version: 0.1.5(@3-/proto@2.0.36)
   '@~3/svelte_mount':
     specifier: ^0.0.1
     version: 0.0.1
@@ -271,8 +271,8 @@ packages:
     resolution: {integrity: sha512-EvXAzDdmAynZyNJyMD5l90RfKhxYglJMJ5tXx3rj9VCUrFNhZnlRTIOJrteMtgtFsfTLf2hUrbh7TtPBnjgpLg==}
     dev: false
 
-  /@5-/alive@0.1.4(@3-/proto@2.0.36):
-    resolution: {integrity: sha512-CorTjD/Yup6aW1H0pvnqzgnI81oXMSmW4jqsCRdx7768MM25ZdXR9EmX3VdkXP+hR673WReyCFjkL5s/DryrxQ==}
+  /@5-/alive@0.1.5(@3-/proto@2.0.36):
+    resolution: {integrity: sha512-VRJBzAG4lg0wO8NiwZTJp2QyqZUf3ymYNALKpEMHggZSIic0ft5vvFMyc/9uSElRR4bTtffRDn9YHCRe25h3VQ==}
     peerDependencies:
       '@3-/proto': ^2.0.36
     dependencies:
