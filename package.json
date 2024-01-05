@@ -16,5 +16,9 @@
     "svgo": "^3.2.0",
     "vite": "^5.0.10",
     "~": "link:./src/"
+  },
+  "scripts": {
+    "build": "./dist.sh"
   }
+
 }
