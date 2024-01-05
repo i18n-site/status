@@ -1,3 +1,0 @@
-
-[env.production.vars]
-NPM_FLAGS="--version"
