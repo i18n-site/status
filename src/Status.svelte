@@ -1,15 +1,9 @@
 <template lang="pug">
 +if check
   +if err.length
+    Table(i=err)
   +if ok.length
-    +each ok as [kind, hli]
-      h3 { kind }
-      +each hli as [host, li]
-        h4 { host }
-        +each li as [ip, err, ts]
-          p {ip} {err} {ts}
-
-
+    Table(i=ok)
   +else
     WAIT
 
@@ -18,6 +12,7 @@
 <script lang="coffee">
 > @~3/wait:WAIT
   @5-/alive/S.js > Li
+  ./Table.svelte
 
 + ok, err, check
 
