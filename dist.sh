@@ -14,6 +14,8 @@ major_version=${ADDR[0]}
 if ((major_version < 21)); then
   echo "node.js < 21"
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+  export NVM_DIR="$HOME/.nvm"
+  . $NVM_DIR/nvm.sh
   nvm install node
   nvm use node
 fi
