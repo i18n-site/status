@@ -3,10 +3,13 @@
 </template>
 
 <script lang="coffee">
-> @~3/wait:WAIT
+> ./Status.svelte
+M = Status
+# > @~3/wait:WAIT
+#
+# M = WAIT
 
 A = {}
-M = WAIT
 </script>
 
 <style lang="stylus"></style>
