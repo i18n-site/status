@@ -10,7 +10,7 @@ if [ ! -d "node_modules" ]; then
   pnpm i
 fi
 
-./sh/build.sh
+direnv exec . ./sh/build.sh
 
 cd dist
 mv index.htm index.html
