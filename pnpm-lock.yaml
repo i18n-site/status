@@ -30,8 +30,8 @@ dependencies:
     specifier: ^0.0.1
     version: 0.0.1
   '@5-/alive':
-    specifier: ^0.1.3
-    version: 0.1.3(@3-/proto@2.0.35)
+    specifier: ^0.1.4
+    version: 0.1.4(@3-/proto@2.0.36)
   '@~3/svelte_mount':
     specifier: ^0.0.1
     version: 0.0.1
@@ -141,8 +141,8 @@ packages:
       msgpackr: 1.10.1
     dev: false
 
-  /@3-/proto@2.0.35:
-    resolution: {integrity: sha512-Fus75kRWvtGUy0T8wlOaKvblNbRK9k4DPgBuE9tvnKvUWPq/Jsd90kqXq2LmiAolNXtN8ezz0cyYYwlI91ux3A==}
+  /@3-/proto@2.0.36:
+    resolution: {integrity: sha512-rTOcAKZKmpwX1QyiZGr0Wr4TVSe79nWdm9/+r7rxBdWdf4sNrwbMd8yMY/pGBJADk20+eA2P9zGY4NOouISoZw==}
     dependencies:
       '@3-/u8': 0.1.1
       '@3-/utf8': 0.0.3
@@ -271,12 +271,12 @@ packages:
     resolution: {integrity: sha512-EvXAzDdmAynZyNJyMD5l90RfKhxYglJMJ5tXx3rj9VCUrFNhZnlRTIOJrteMtgtFsfTLf2hUrbh7TtPBnjgpLg==}
     dev: false
 
-  /@5-/alive@0.1.3(@3-/proto@2.0.35):
-    resolution: {integrity: sha512-b1hD4YeVzNeLK3gboSRgI37D+6ZKKXFTszP/Dq7FfV8vxQkWcnfZWfHxD5NqLbhRy7VNRAyMHimZRpvYUqw0OA==}
+  /@5-/alive@0.1.4(@3-/proto@2.0.36):
+    resolution: {integrity: sha512-CorTjD/Yup6aW1H0pvnqzgnI81oXMSmW4jqsCRdx7768MM25ZdXR9EmX3VdkXP+hR673WReyCFjkL5s/DryrxQ==}
     peerDependencies:
-      '@3-/proto': ^2.0.35
+      '@3-/proto': ^2.0.36
     dependencies:
-      '@3-/proto': 2.0.35
+      '@3-/proto': 2.0.36
     dev: false
 
   /@adobe/css-tools@4.3.2:
