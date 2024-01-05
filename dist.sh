@@ -13,7 +13,7 @@ major_version=${ADDR[0]}
 
 if ((major_version < 21)); then
   echo "node.js < 21"
-  pnpm instlal -g nvm
+  pnpm i -g nvm
   nvm install node
   nvm use node
 fi
