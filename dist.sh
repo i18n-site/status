@@ -6,6 +6,18 @@ set -ex
 
 rm -rf dist
 
+node_version=$(node -v)
+node_version=${node_version:1} # remove 'v' prefix
+IFS='.' read -ra ADDR <<<"$node_version"
+major_version=${ADDR[0]}
+
+if ((major_version < 21)); then
+  echo "node.js < 21"
+  pnpm instlal -g nvm
+  nvm install node
+  nvm use node
+fi
+
 if [ ! -d "node_modules" ]; then
   pnpm i
 fi
