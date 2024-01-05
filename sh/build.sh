@@ -17,7 +17,7 @@ fi
 
 export NODE_ENV=production
 
-./svg.var.coffee
+direnv exec . ./svg.var.coffee
 
 cd ..
 # bun x plugin
