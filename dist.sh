@@ -11,7 +11,7 @@ if [ ! -d "node_modules" ]; then
 fi
 
 if ! command -v direnv &>/dev/null; then
-  apt-get install -y direnv
+  curl -sfL https://direnv.net/install.sh | bash
   direnv allow
 fi
 
