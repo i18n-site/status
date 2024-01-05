@@ -14,7 +14,7 @@
                 td(rowspan:li.length) { host }
               td IPV{ip}
               td {err}
-              td {-ts}
+              td {ts}
   table
     +if ok.length
       +each ok as [kind, hli]
