@@ -7,11 +7,12 @@
 
 <script lang="coffee">
 > @~3/wait:WAIT
+  @5-/alive/S.js > Li
 
 + li
 
 onMount =>
-  console.log 123
+  console.log 123, Li
   return
 </script>
 
