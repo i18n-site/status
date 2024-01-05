@@ -1,9 +1,9 @@
 <template lang="pug">
 +if check
   +if err.length
-    Table(i=err)
+    St(i=err)
   +if ok.length
-    Table(i=ok)
+    St(i=ok)
   +else
     WAIT
 
@@ -12,7 +12,7 @@
 <script lang="coffee">
 > @~3/wait:WAIT
   @5-/alive/S.js > Li
-  ./Table.svelte
+  ./St.svelte
 
 + ok, err, check
 
