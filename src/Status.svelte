@@ -20,7 +20,7 @@
       +each ok as [kind, hli]
         tr
           th(colspan=2) { kind }
-          th 下次检r
+          th 下次检查
         +each hli as [host, li]
           +each li as [ip, err, ts], p
             tr
@@ -63,7 +63,7 @@ onMount =>
               [
                 ip
                 err
-                Math.round((ts-now) / 60)
+                Math.round((ts-now) / 6)/10
               ]
           ]
       ]
