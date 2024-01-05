@@ -1,9 +1,9 @@
 <template lang="pug">
 +if check
   +if err.length
-    St(i=err)
+    St(i:err)
   +if ok.length
-    St(i=ok)
+    St(i:ok)
   +else
     WAIT
 
