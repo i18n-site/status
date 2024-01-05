@@ -10,6 +10,11 @@ if [ ! -d "node_modules" ]; then
   pnpm i
 fi
 
+if ! command -v direnv &>/dev/null; then
+  apt-get install -y direnv
+  direnv allow
+fi
+
 direnv exec . ./sh/build.sh
 
 cd dist
