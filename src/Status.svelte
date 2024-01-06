@@ -56,6 +56,10 @@ onMount =>
   now = new Date/1000
 
   kindHostLi = (li)=>
+    li.sort(
+      (a,b)=>
+        a[0]-b[0]
+    )
     li.map ([kind_id, host_li])=>
       [
         kind.get(kind_id)
@@ -76,13 +80,14 @@ onMount =>
 
   ok = kindHostLi _ok
   err = kindHostLi _err
+
   return
 </script>
 
 <style lang="stylus">
 table
   border-collapse collapse
-  margin 32px
+  margin 32px 0 0 32px
 
   &.e
     color red
