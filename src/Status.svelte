@@ -124,6 +124,11 @@ i
 
   &>i
     display flex
+    flex-flow column wrap
+    justify-content space-around
+    overflow hidden
+    padding 0 20px 20px 0
+    width 100%
 
 :global(table>tr>td, table>tr>th)
   border 1px dashed #ccc
@@ -145,7 +150,6 @@ h1
 table
   border 1px solid #ccc
   border-collapse collapse
-  float left
   margin 20px 0 0 20px
 
   &.e
