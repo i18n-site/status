@@ -4,7 +4,7 @@ DIR=$(dirname $(realpath "$0"))
 cd $DIR
 set -ex
 
-# ./sh/plugin.sh
+./sh/plugin.sh
 cd src
 
 if [ -f "../conf/ol.js" ]; then
