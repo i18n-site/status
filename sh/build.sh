@@ -20,7 +20,7 @@ export NODE_ENV=production
 ./svg.var.coffee
 
 cd ..
-# bun x plugin
+bun x plugin
 bun x vite build
 # ./i18n.sh
 
