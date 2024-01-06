@@ -124,7 +124,7 @@ i
 
   &>i
     display flex
-    flex-flow column wrap
+    flex-flow row wrap
     justify-content space-around
     margin 0 20px 20px 0
     overflow hidden
