@@ -167,6 +167,7 @@ table
 
   th
     background #efe
+    height 38px
 
     &>b
       display block
