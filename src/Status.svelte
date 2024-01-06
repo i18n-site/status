@@ -47,7 +47,9 @@
 > @~3/wait:WAIT
   @5-/alive/S.js > Li
 
-+ ok, err, check, last, count, cost, begin
++ ok, err, check, last, count, begin
+
+cost = 0
 
 get =  =>
   [
@@ -100,7 +102,7 @@ get =  =>
 timer = setInterval(
   =>
     if begin
-      if (last - begin) > 60
+      if (last - begin) > (60 + cost)
         begin = 0
         try
          await get()
