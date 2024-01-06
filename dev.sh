@@ -10,7 +10,7 @@ fi
 
 # 国际化
 # ./sh/plugin.sh
-# bun x plugin
+bun x plugin
 rm -rf node_modules/.vite vite.config.js.timestamp-*.mjs
 direnv exec . ./sh/svg.var.coffee
 cd src
