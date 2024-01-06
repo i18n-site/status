@@ -1,22 +1,22 @@
 // import { captcha } from "@~3/captcha";
 // import lang from "@~3/lang";
-import { toastErr } from "@~3/toast";
-import fBin from "@3-/fetch/fBinPrefix.js";
+import { toastErr } from "@~3/toast"
+import fBin from "@3-/fetch/fBinPrefix.js"
 
-import { API } from "~/conf.js";
-const fbin = fBin(API);
+import { API } from "~/conf.js"
+const fbin = fBin(API)
 
 // var AUTH;
 //
 // export const setAuth = (f) => (AUTH = f);
 
 export const req = async (url, opt) => {
-	opt.method = opt.method || "POST";
-	opt.headers = opt.headers || {};
+	opt.method = opt.method || "POST"
+	opt.headers = opt.headers || {}
 	// opt.headers["Accept-Language"] = lang();
 	// opt.credentials = "include";
 	try {
-		return await fbin(url, opt);
+		return await fbin(url, opt)
 	} catch (r) {
 		// var { status } = r;
 		// if (status) {
@@ -34,15 +34,15 @@ export const req = async (url, opt) => {
 		// 避免 dialog 被立马关闭
 		setTimeout(async () => {
 			try {
-				r = await r.text();
+				r = await r.text()
 			} finally {
-				toastErr(r);
+				toastErr(r)
 			}
-		});
+		})
 
-		throw r;
+		throw r
 	}
-};
+}
 
 export default new Proxy(
 	{},
@@ -50,11 +50,11 @@ export default new Proxy(
 		get:
 			(_, url) =>
 			async (...args) => {
-				var opt = {};
+				const opt = {}
 				if (args.length) {
-					opt.body = JSON.stringify(args.length == 1 ? args[0] : args);
+					opt.body = JSON.stringify(args.length > 1 ? args : args[0])
 				}
-				return req(url, opt);
+				return req(url, opt)
 			},
 	},
-);
+)
