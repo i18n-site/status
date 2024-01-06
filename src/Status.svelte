@@ -21,23 +21,21 @@
                   td.s IPV{ip}
                   td.s {err}
                   td.s {-ts}
-      - var n = 0;
-      while ++n < 10
-        +if ok.length
-          +each ok as [kind, hli]
-            table
-              tr
-                th(colspan=2) { kind }
-                th
-                  b 下次检查
-                  b 单位分钟
-              +each hli as [host, li]
-                +each li as [ip, err, ts], p
-                  tr
-                    +if p == 0
-                      td(rowspan:li.length) { host }
-                    td.s IPV{ip}
-                    td.s {ts}
+      +if ok.length
+        +each ok as [kind, hli]
+          table
+            tr
+              th(colspan=2) { kind }
+              th
+                b 下次检查
+                b 单位分钟
+            +each hli as [host, li]
+              +each li as [ip, err, ts], p
+                tr
+                  +if p == 0
+                    td(rowspan:li.length) { host }
+                  td.s IPV{ip}
+                  td.s {ts}
   +else
     WAIT
 
