@@ -126,9 +126,8 @@ i
     display flex
     flex-flow column wrap
     justify-content space-around
+    margin 0 20px 20px 0
     overflow hidden
-    padding 0 20px 20px 0
-    width 100%
 
 :global(table>tr>td, table>tr>th)
   border 1px dashed #ccc
