@@ -96,7 +96,7 @@ main
   text-align center
 
 table
-  border 1px solid
+  border 1px solid #ccc
   border-collapse collapse
   margin 32px 0 0 32px
 
