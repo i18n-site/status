@@ -30,17 +30,17 @@ export const req = async (url, opt) => {
 		// 		case 412: // captcha error
 		// 			return captcha(url, opt.body, new Uint8Array(await r.arrayBuffer()));
 		// 		default:
-		// 			// 避免 dialog 被立马关闭
+
+		// 避免 dialog 被立马关闭
 		setTimeout(async () => {
-			console.log([r.status, r.text]);
-			toastErr(r.status ? r.status + " : " + (await r.text()) : r.toString());
+			try {
+				r = await r.text();
+			} finally {
+				toastErr(r);
+			}
 		});
 
-		// 			throw r;
-		// 	}
-		// } else {
 		throw r;
-		// }
 	}
 };
 
