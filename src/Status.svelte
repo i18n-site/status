@@ -85,8 +85,19 @@ onMount =>
 </script>
 
 <style lang="stylus">
+main
+  display flex
+  flex-flow column wrap
+
+:global(table>tr>td, table>tr>th)
+  border 1px dashed #ccc
+  font-weight 400
+  padding 16px
+  text-align center
+
 table
   border-collapse collapse
+  border-style solid
   margin 32px 0 0 32px
 
   &.e
@@ -94,17 +105,9 @@ table
     margin-bottom 0
 
   th
+    background #efe
+
     &>b
       display block
       font-size 12px
-
-main
-  display flex
-  flex-flow column wrap
-
-:global(table>tr>td, table>tr>th)
-  border 1px solid #ccc
-  font-weight 400
-  padding 16px
-  text-align center
 </style>
