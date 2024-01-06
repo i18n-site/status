@@ -96,8 +96,8 @@ main
   text-align center
 
 table
+  border 1px solid
   border-collapse collapse
-  border-style solid
   margin 32px 0 0 32px
 
   &.e
