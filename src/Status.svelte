@@ -63,10 +63,13 @@ onMount =>
           [
             host.get(host_id)
             l.map ([ip, err, ts])=>
+              diff = ts-now
+              if err == 0 and diff < 0
+                diff += 60
               [
                 ip
                 err
-                Math.round((60+ts-now) / 6)/10
+                Math.round(diff / 6)/10
               ]
           ]
       ]
@@ -92,6 +95,7 @@ table
 
 main
   display flex
+  flex-flow column wrap
 
 :global(table>tr>td, table>tr>th)
   border 1px solid #ccc
