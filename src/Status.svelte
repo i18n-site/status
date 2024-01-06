@@ -13,7 +13,7 @@
               tr
                 +if p == 0
                   td(rowspan:li.length) { host }
-                td IrV{ip}
+                td IPV{ip}
                 td {err}
                 td {-ts}
     +if ok.length
