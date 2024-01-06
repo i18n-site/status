@@ -31,7 +31,9 @@ export const req = async (url, opt) => {
 		// 			return captcha(url, opt.body, new Uint8Array(await r.arrayBuffer()));
 		// 		default:
 		// 			// 避免 dialog 被立马关闭
-		setTimeout(async () => toastErr(r.status + " : " + (await r.text())));
+		setTimeout(async () =>
+			toastErr(r.status ? r.status + " : " + (await r.text()) : r.toString()),
+		);
 		// 			throw r;
 		// 	}
 		// } else {
