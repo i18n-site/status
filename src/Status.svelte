@@ -104,6 +104,9 @@ table
     color red
     margin-bottom 0
 
+    th
+      background #fee
+
   th
     background #efe
 
