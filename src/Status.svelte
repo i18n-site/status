@@ -42,7 +42,7 @@
 
 + ok, err, check
 
-onMount =>
+get =  =>
   [
     kind
     host
@@ -51,6 +51,11 @@ onMount =>
     check
   ] = await Li()
 
+  [
+    last
+    count
+    cost
+  ] = check
   kind = new Map kind
   host = new Map host
   now = new Date/1000
@@ -82,6 +87,8 @@ onMount =>
   err = kindHostLi _err
 
   return
+
+onMount get
 </script>
 
 <style lang="stylus">
