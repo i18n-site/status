@@ -1,6 +1,7 @@
 <template lang="pug">
 +if check
   main
+    h1 距离上次检查 {last} 分钟
     +if err.length
       +each err as [kind, hli]
         table.e
@@ -40,7 +41,7 @@
 > @~3/wait:WAIT
   @5-/alive/S.js > Li
 
-+ ok, err, check
++ ok, err, check, last
 
 get =  =>
   [
@@ -51,14 +52,17 @@ get =  =>
     check
   ] = await Li()
 
-  [
-    last
-    count
-    cost
-  ] = check
+  now = new Date/1000
+  last = Number.parseInt((now - check[0]) / 6)/10
+  console.log {last}
+  # [
+  #   last
+  #   count
+  #   cost
+  # ] = check
+
   kind = new Map kind
   host = new Map host
-  now = new Date/1000
 
   kindHostLi = (li)=>
     li.sort(
@@ -102,10 +106,14 @@ main
   padding 16px
   text-align center
 
+h1
+  margin 20px 20px 0
+  padding 0
+
 table
   border 1px solid #ccc
   border-collapse collapse
-  margin 32px 0 0 32px
+  margin 20px
 
   &.e
     color red
