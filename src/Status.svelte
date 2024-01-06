@@ -2,8 +2,8 @@
 +if check
   main
     +if err.length
-      table.e
-        +each err as [kind, hli]
+      +each err as [kind, hli]
+        table.e
           tr
             th(colspan=2) { kind }
             th 出错次数
@@ -17,8 +17,8 @@
                 td {err}
                 td {-ts}
     +if ok.length
-      table
-        +each ok as [kind, hli]
+      +each ok as [kind, hli]
+        table
           tr
             th(colspan=2) { kind }
             th
@@ -66,7 +66,7 @@ onMount =>
               [
                 ip
                 err
-                Math.round((ts-now) / 6)/10
+                Math.round((60+ts-now) / 6)/10
               ]
           ]
       ]
@@ -79,7 +79,7 @@ onMount =>
 <style lang="stylus">
 table
   border-collapse collapse
-  margin auto
+  margin 32px
 
   &.e
     color red
@@ -90,8 +90,11 @@ table
       display block
       font-size 12px
 
+main
+  display flex
+
 :global(table>tr>td, table>tr>th)
-  border 1px solid #999
+  border 1px solid #ccc
   font-weight 400
   padding 16px
   text-align center
