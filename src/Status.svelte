@@ -60,7 +60,8 @@ get =  =>
 
   now = Math.round new Date/1000
   [ts, count, total_cost] = check
-  begin = last = now - ts
+  begin = 1
+  last = now - ts
 
   if count
     cost = Math.round(total_cost / count) / 1000
