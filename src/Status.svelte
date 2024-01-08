@@ -61,6 +61,14 @@ get =  =>
     check
   ] = await Li()
 
+  # console.log {
+  #   kind
+  #   host
+  #   ipname
+  #   _ok
+  #   _err
+  #   check
+  # }
   now = Math.round new Date/1000
   [ts, count, total_cost] = check
   begin = 1
@@ -82,9 +90,8 @@ get =  =>
       [
         kind.get(kind_id)
         host_li.map ([host_id, l])=>
-
           [
-            if [4,6].includes(li[0][0]) then host.get(host_id) else ipname.get(host_id)
+            if [4,6].includes(l[0][0]) then host.get(host_id) else ipname.get(host_id)
             l.map ([ip, err, ts])=>
               diff = ts-now
               if err == 0 and diff < 0
