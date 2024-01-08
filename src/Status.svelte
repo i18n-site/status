@@ -16,9 +16,12 @@
             +each hli as [host, li]
               +each li as [dns_type, err, ts], p
                 tr
-                  +if p == 0
-                    td(rowspan:li.length) { host }
-                  td.s IPV{dns_type}
+                  +if [4,6].includes(dns_type)
+                    +if p == 0
+                      td(rowspan:li.length) { host }
+                    td.s IPV{dns_type}
+                    +else
+                      td(colspan=2) {host}
                   td.s {err}
                   td.s {-ts}
       +if ok.length
@@ -44,7 +47,7 @@
 > @~3/wait:WAIT
   @5-/alive/S.js > Li
 
-+ ok, err, check, last, count, begin
++ ok, err, check, last, count, begin, ipname
 
 cost = 0
 
@@ -79,8 +82,9 @@ get =  =>
       [
         kind.get(kind_id)
         host_li.map ([host_id, l])=>
+
           [
-            host.get(host_id)
+            if [4,6].includes(li[0][0]) then host.get(host_id) else ipname.get(host_id)
             l.map ([ip, err, ts])=>
               diff = ts-now
               if err == 0 and diff < 0
