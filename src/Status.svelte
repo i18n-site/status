@@ -14,11 +14,11 @@
               th 出错次数
               th 持续分钟
             +each hli as [host, li]
-              +each li as [ip, err, ts], p
+              +each li as [dns_type, err, ts], p
                 tr
                   +if p == 0
                     td(rowspan:li.length) { host }
-                  td.s IPV{ip}
+                  td.s IPV{dns_type}
                   td.s {err}
                   td.s {-ts}
       +if ok.length
@@ -38,7 +38,6 @@
                   td.s {ts}
   +else
     WAIT
-
 </template>
 
 <script lang="coffee">
@@ -53,6 +52,7 @@ get =  =>
   [
     kind
     host
+    ipname
     _ok
     _err
     check
@@ -68,6 +68,7 @@ get =  =>
 
   kind = new Map kind
   host = new Map host
+  ipname = new Map ipname
 
   kindHostLi = (li)=>
     li.sort(
