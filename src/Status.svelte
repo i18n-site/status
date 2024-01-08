@@ -16,12 +16,12 @@
             +each hli as [host, li]
               +each li as [dns_type, err, ts], p
                 tr
-                  +if [4,6].includes(dns_type)
-                    +if p == 0
-                      td(rowspan:li.length) { host }
-                    td.s IPV{dns_type}
+                  +if 0 == dns_type
+                    td(colspan=2) {host}
                     +else
-                      td(colspan=2) {host}
+                      +if p == 0
+                        td(rowspan:li.length) { host }
+                      td.s IPV{dns_type}
                   td.s {err}
                   td.s {-ts}
       +if ok.length
@@ -33,11 +33,14 @@
                 b 下次检查
                 b 单位分钟
             +each hli as [host, li]
-              +each li as [ip, err, ts], p
+              +each li as [dns_type, err, ts], p
                 tr
-                  +if p == 0
-                    td(rowspan:li.length) { host }
-                  td.s IPV{ip}
+                  +if 0 == dns_type
+                    td(colspan=2) {host}
+                    +else
+                      +if p == 0
+                        td(rowspan:li.length) { host }
+                      td.s IPV{dns_type}
                   td.s {ts}
   +else
     WAIT
@@ -92,12 +95,13 @@ get =  =>
         host_li.map ([host_id, l])=>
           [
             if [4,6].includes(l[0][0]) then host.get(host_id) else ipname.get(host_id)
-            l.map ([ip, err, ts])=>
+            l.map ([dns_type, err, ts])=>
               diff = ts-now
               if err == 0 and diff < 0
                 diff += 60
+
               [
-                ip
+                dns_type
                 err
                 Math.round(diff / 6)/10
               ]
