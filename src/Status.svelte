@@ -188,4 +188,8 @@ table
     &>b
       display block
       font-size 12px
+
+@media (max-width 600px)
+  table
+    width 100%
 </style>
