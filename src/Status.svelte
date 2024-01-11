@@ -2,7 +2,7 @@
 +if check
   i
     h1 距离上次检查 {last} 秒
-      b 当前进程累计 {count} 次
+      b 本进程已检查 {count} 次
         +if count
           | / 每次耗时 {cost} 秒
     i
